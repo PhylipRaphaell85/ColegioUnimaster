@@ -59,12 +59,11 @@ export default function Footer() {
 
         <div className="footer-map">
 
-          <iframe
-            src="https://www.google.com/maps?q=Caruaru&output=embed"
-            allowFullScreen=""
-            loading="lazy"
-          ></iframe>
-
+        <iframe
+  src="https://www.google.com/maps?q=Rua+Do+Convento,+770+-+Divinópolis,+Caruaru+-+PE,+55010-280&output=embed"
+  allowFullScreen=""
+  loading="lazy"
+></iframe>
         </div>
 
         {/* REDES */}
