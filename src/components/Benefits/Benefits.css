@@ -63,19 +63,14 @@
 
   .benefits{
     margin-top: -75px;
-
     padding: 0 15px;
   }
 
   .benefits-card{
-    width: 100%;
-
+    width: 90%;
     grid-template-columns: repeat(2,1fr);
-
     gap: 25px;
-
-    padding: 30px 25px;
-
+    padding: 30px 5px;
     border-radius: 20px;
   }
 
@@ -84,21 +79,20 @@
   }
 
   .icon-box{
-    min-width: 38px;
+    min-width: 28px;
 
     font-size: 1.7rem;
   }
 
   .benefit-item h3{
     font-size: 1rem;
-
     margin-bottom: 6px;
   }
 
   .benefit-item p{
-    font-size: 0.9rem;
+    font-size: 0.7rem;
 
-    line-height: 24px;
+    line-height: 14px;
   }
 
 }
