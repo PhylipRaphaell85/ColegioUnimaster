@@ -1,0 +1,396 @@
+.about{
+  width: 100%;
+
+  background: #f8f9ff;
+
+  padding: 140px 0 100px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* CONTAINER */
+
+.about-container{
+  width: 100%;
+  max-width: 1400px;
+
+  margin: auto;
+  padding: 0 50px;
+
+  display: grid;
+  grid-template-columns: 1fr 600px;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+/* ESQUERDA */
+
+.about-left{
+  position: relative;
+  z-index: 2;
+}
+
+.about-left span{
+  color: #ff3131;
+
+  font-size: 0.9rem;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.about-left h2{
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 38px;
+  color: #001B66;
+  margin: 15px 0 30px;
+  max-width: 900px;
+}
+
+.about-left > p{
+  color: #555;
+
+  line-height: 36px;
+
+  margin-bottom: 8px;
+
+  max-width: 720px;
+
+  font-size: 1rem;
+}
+
+/* TÓPICOS */
+
+.about-topic{
+  display: flex;
+  align-items: flex-start;
+
+  gap: 18px;
+
+  margin-top: 30px;
+}
+
+.topic-icon{
+  width: 60px;
+  height: 60px;
+
+  min-width: 60px;
+
+  background: linear-gradient(
+    135deg,
+    #001B66,
+    #0418F8
+  );
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-size: 1.3rem;
+
+  box-shadow: 0 10px 20px rgba(4,24,248,0.2);
+}
+
+.about-topic h4{
+  color: #001B66;
+
+  font-size: 1.1rem;
+  font-weight: 800;
+
+  margin-bottom: 6px;
+}
+
+.about-topic p{
+  color: #555;
+
+  line-height: 30px;
+}
+
+/* DIREITA */
+
+.about-right{
+  position: relative;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* IMAGEM */
+
+.school-image{
+  width: 100%;
+    top: -60px;
+  border-radius: 45px;
+
+  object-fit: cover;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+
+  position: relative;
+  z-index: 2;
+}
+
+/* DECORAÇÕES */
+
+.about::before{
+  content: "";
+
+  width: 180px;
+  height: 180px;
+
+  background-image: radial-gradient(
+    #4d7cff 2px,
+    transparent 2px
+  );
+
+  background-size: 16px 16px;
+
+  position: absolute;
+
+  top: 100px;
+  right: 120px;
+
+  opacity: 0.3;
+}
+
+.about::after{
+  content: "";
+
+  width: 300px;
+  height: 300px;
+
+  background: rgba(4,24,248,0.05);
+
+  border-radius: 50%;
+
+  position: absolute;
+
+  bottom: -120px;
+  left: -100px;
+
+  filter: blur(20px);
+}
+
+/* ESTATÍSTICAS */
+
+.about-stats{
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 80px auto 0;
+
+  background: linear-gradient(
+    135deg,
+    #001B66,
+    #0418F8
+  );
+
+  border-radius: 24px;
+
+  padding: 35px 45px;
+
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+
+  gap: 30px;
+
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* CARD */
+
+.stat-card{
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  color: white;
+}
+
+.stat-card svg{
+  font-size: 2.2rem;
+}
+
+.stat-card h3{
+  font-size: 2rem;
+  font-weight: 900;
+
+  margin-bottom: 4px;
+}
+
+.stat-card p{
+  color: rgba(255,255,255,0.85);
+
+  font-size: 0.95rem;
+}
+
+/* ======================================================
+   RESPONSIVO 900PX
+====================================================== */
+
+@media(max-width: 900px){
+
+  .about{
+    padding: 120px 0 70px;
+  }
+
+  /* CONTAINER */
+
+  .about-container{
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    padding: 0 20px;
+
+    text-align: center;
+  }
+
+  /* ESQUERDA */
+
+  .about-left{
+    width: 100%;
+  }
+
+  .about-left span{
+    font-size: 0.85rem;
+  }
+
+  .about-left h2{
+    font-size: 1.5rem;
+
+    line-height: 34px;
+
+    margin: 14px auto 24px;
+    max-width: 100%;
+  }
+
+  .about-left > p{
+    font-size: 0.95rem;
+
+    line-height: 32px;
+
+    max-width: 100%;
+  }
+
+  /* TÓPICOS */
+
+  .about-topic{
+    gap: 15px;
+
+    margin-top: 25px;
+
+    text-align: left;
+  }
+
+  .topic-icon{
+    width: 55px;
+    height: 55px;
+
+    min-width: 55px;
+
+    font-size: 1.2rem;
+  }
+
+  .about-topic h4{
+    font-size: 1rem;
+  }
+
+  .about-topic p{
+    font-size: 0.92rem;
+
+    line-height: 28px;
+  }
+
+  /* DIREITA */
+
+  .about-right{
+    width: 100%;
+  }
+
+  /* IMAGEM */
+
+  .school-image{
+    width: 100%;
+
+    max-width: 520px;
+
+    top: 0;
+
+    border-radius: 30px;
+  }
+
+  /* DECORAÇÕES */
+
+  .about::before{
+    width: 120px;
+    height: 120px;
+
+    top: 80px;
+    right: 20px;
+
+    opacity: 0.2;
+  }
+
+  .about::after{
+    width: 220px;
+    height: 220px;
+
+    bottom: -100px;
+    left: -80px;
+  }
+
+  /* ESTATÍSTICAS */
+
+  .about-stats{
+    width: calc(100% - 40px);
+
+    margin: 60px auto 0;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 25px;
+
+    padding: 30px 25px;
+
+    border-radius: 22px;
+  }
+
+  /* CARD */
+
+  .stat-card{
+    justify-content: center;
+
+    text-align: center;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .stat-card svg{
+    font-size: 2rem;
+  }
+
+  .stat-card h3{
+    font-size: 1.7rem;
+  }
+
+  .stat-card p{
+    font-size: 0.9rem;
+
+    line-height: 24px;
+  }
+
+}

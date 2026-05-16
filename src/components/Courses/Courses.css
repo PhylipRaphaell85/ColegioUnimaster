@@ -1,0 +1,439 @@
+.courses{
+  width: 100%;
+  padding: 110px 35px;
+  background: #f5f7fc;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.courses-header{
+  width: 100%;
+  max-width: 1700px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 340px 1fr;
+
+  gap: 45px;
+
+  align-items: start;
+}
+
+/* =========================================
+   TEXTO
+========================================= */
+
+.courses-text{
+  width: 100%;
+  padding-top: 10px;
+}
+
+.courses-text span{
+  color: #ff3131;
+
+  font-size: 1.95rem;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.courses-text h2{
+  font-size: 3.3rem;
+
+  line-height: 65px;
+
+  color: #001B66;
+
+  margin: 12px 0 28px;
+
+  font-weight: 800;
+}
+
+.courses-text p{
+  color: #555;
+
+  line-height: 28px;
+
+  font-size: 1.05rem;
+
+  margin-bottom: 40px;
+}
+
+/* BOTÃO */
+
+.courses-text button{
+  width: 270px;
+  height: 68px;
+
+  border: none;
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    #0418F8,
+    #001B66
+  );
+
+  color: white;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 20px rgba(4,24,248,0.2);
+
+  transition: 0.3s;
+}
+
+.courses-text button:hover{
+  transform: translateY(-5px);
+}
+
+/* =========================================
+   GRID
+========================================= */
+
+.courses-grid{
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 0.72fr);
+
+  justify-content: center;
+
+  gap: 22px;
+
+  align-items: start;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.card{
+  background: white;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+
+  transition: 0.35s;
+
+  position: relative;
+
+  height: auto;
+}
+
+.card:hover{
+  transform: translateY(-10px);
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   IMAGEM
+========================================= */
+
+.card img{
+  width: 100%;
+  height: 190px;
+
+  object-fit: cover;
+}
+/* =========================================
+   CONTEÚDO
+========================================= */
+
+.content{
+  padding: 28px 24px 24px;
+
+  position: relative;
+}
+
+/* ÍCONE */
+
+.icon{
+  width: 52px;
+  height: 52px;
+  background: #0418F8;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 1.7rem;
+  position: absolute;
+
+  top: -36px;
+  left: 32px;
+
+  box-shadow: 0 8px 18px rgba(4,24,248,0.25);
+}
+
+/* TÍTULO */
+
+.content h3{
+  font-size: 2rem;
+
+  line-height: 46px;
+
+  color: #001B66;
+
+  margin-bottom: 22px;
+
+  font-weight: 800;
+}
+
+/* TEXTO */
+
+.content p{
+  color: #555;
+
+  line-height: 26px;
+
+  font-size: 1rem;
+
+  margin-bottom: 20px;
+}
+
+/* LISTA */
+
+.content ul{
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.content li{
+  display: flex;
+  align-items: flex-start;
+
+  gap: 12px;
+
+  color: #444;
+
+  font-size: 1rem;
+
+  line-height: 30px;
+}
+
+/* CHECK */
+
+.content li svg{
+  color: #0418F8;
+
+  min-width: 18px;
+
+  margin-top: 5px;
+}
+
+/* =========================================
+   RESPONSIVO 1200
+========================================= */
+
+@media(max-width: 1200px){
+
+  .courses-header{
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .courses-text{
+    text-align: center;
+  }
+
+  .courses-text h2{
+    font-size: 3.5rem;
+
+    line-height: 68px;
+  }
+
+  .courses-text p{
+    max-width: 700px;
+
+    margin: auto;
+    margin-bottom: 35px;
+  }
+
+  .courses-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+/* =========================================
+   RESPONSIVO 900
+========================================= */
+
+@media(max-width: 900px){
+
+  .courses{
+    padding: 90px 22px;
+  }
+
+  .courses-text h2{
+    font-size: 3rem;
+
+    line-height: 60px;
+  }
+
+  .courses-grid{
+    gap: 24px;
+  }
+
+  .card img{
+    height: 220px;
+  }
+
+  .content{
+    padding: 35px 28px 30px;
+  }
+
+  .content h3{
+    font-size: 1.8rem;
+
+    line-height: 42px;
+  }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width: 768px){
+
+  .courses{
+    padding: 80px 18px;
+  }
+
+  .courses-header{
+    gap: 40px;
+  }
+
+  .courses-text{
+    text-align: center;
+  }
+
+  .courses-text h2{
+    font-size: 2.4rem;
+
+    line-height: 50px;
+  }
+
+  .courses-text p{
+    font-size: 0.95rem;
+
+    line-height: 34px;
+  }
+
+  .courses-text button{
+    width: 100%;
+    max-width: 320px;
+
+    height: 62px;
+  }
+
+  .courses-grid{
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+  .card{
+    border-radius: 24px;
+  }
+
+  .card img{
+    height: 230px;
+  }
+
+  .content{
+    padding: 35px 25px 30px;
+  }
+
+  .icon{
+    width: 48px;
+    height: 48px;
+
+    font-size: 1.5rem;
+
+    top: -34px;
+  }
+
+  .content h3{
+    font-size: 1.9rem;
+
+    line-height: 44px;
+  }
+
+}
+
+/* =========================================
+   MOBILE PEQUENO
+========================================= */
+
+@media(max-width: 480px){
+
+  .courses{
+    padding: 70px 14px;
+  }
+
+  .courses-text h2{
+    font-size: 2rem;
+
+    line-height: 42px;
+  }
+
+  .courses-text p{
+    font-size: 0.9rem;
+
+    line-height: 30px;
+  }
+
+  .courses-text button{
+    width: 100%;
+
+    height: 58px;
+
+    font-size: 0.9rem;
+  }
+
+  .card img{
+    height: 210px;
+  }
+
+  .content{
+    padding: 32px 22px 28px;
+  }
+
+  .content h3{
+    font-size: 1.7rem;
+
+    line-height: 38px;
+  }
+
+  .content p{
+    line-height: 30px;
+  }
+
+  .content li{
+    font-size: 0.9rem;
+  }
+
+}
