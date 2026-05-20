@@ -167,7 +167,8 @@ export default function CoursesSection() {
             </div>
 
             <h3>
-              Ensino Médio
+              Ensino Fundamental II
+
             </h3>
 
             <p>
