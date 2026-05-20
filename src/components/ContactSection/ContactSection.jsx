@@ -8,8 +8,7 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaClock,
-  FaPaperPlane,
-  FaChevronDown
+  FaPaperPlane
 } from "react-icons/fa";
 
 import Mulher from "../../assets/images/atendente.png";
@@ -23,13 +22,6 @@ export default function ContactSection() {
   const [email, setEmail] = useState("");
   const [assunto, setAssunto] = useState("");
   const [mensagem, setMensagem] = useState("");
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const opcoes = [
-    { valor: "Matrículas", label: "Matrículas" },
-    { valor: "Cursos", label: "Cursos" },
-    { valor: "Financeiro", label: "Financeiro" }
-  ];
 
   /* ENVIAR WHATSAPP */
 
@@ -55,11 +47,6 @@ ${mensagem}
       `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
 
     window.open(url, "_blank");
-  };
-
-  const handleSelectOption = (valor) => {
-    setAssunto(valor);
-    setDropdownOpen(false);
   };
 
   return (
@@ -119,7 +106,8 @@ ${mensagem}
                 <h4>Endereço</h4>
 
                 <p>
-                 Rua Do Convento, 770 <br /> Divinópolis, Caruaru - PE
+                  Rua das Flores, 123 <br />
+                  Centro - Caruaru/PE
                 </p>
               </div>
             </div>
@@ -184,33 +172,30 @@ ${mensagem}
                 required
               />
 
-              {/* ASSUNTO - CUSTOM DROPDOWN */}
+              {/* ASSUNTO */}
 
-              <div className="custom-select-wrapper">
-                <button
-                  type="button"
-                  className="custom-select-button"
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
-                >
-                  <span>{assunto || "Selecione um assunto"}</span>
-                  <FaChevronDown className={`chevron ${dropdownOpen ? 'open' : ''}`} />
-                </button>
-                
-                {dropdownOpen && (
-                  <div className="custom-select-dropdown">
-                    {opcoes.map((opcao) => (
-                      <button
-                        key={opcao.valor}
-                        type="button"
-                        className={`custom-select-option ${assunto === opcao.valor ? 'selected' : ''}`}
-                        onClick={() => handleSelectOption(opcao.valor)}
-                      >
-                        {opcao.label}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <select
+                value={assunto}
+                onChange={(e) => setAssunto(e.target.value)}
+                required
+              >
+                <option value="">
+                  Selecione um assunto
+                </option>
+
+                <option value="Matrículas">
+                  Matrículas
+                </option>
+
+                <option value="Cursos">
+                  Cursos
+                </option>
+
+                <option value="Financeiro">
+                  Financeiro
+                </option>
+
+              </select>
 
               {/* MENSAGEM */}
 

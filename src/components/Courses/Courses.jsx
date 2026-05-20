@@ -116,13 +116,13 @@ const navigate = useNavigate();
 
               <h3>
                 Ensino Fundamental
-                <p>1º ao 5º ano e Anos Finais 6º ao 9º ano</p>
+                <p>1º ao 5º e Anos Finais 6º ao 9º ano</p>
               </h3>
 
               <p>
                 Base sólida de conhecimentos
-                para formar alunos curiosos,
-                críticos e preparados.
+                para formar alunos
+               preparados.
               </p>
 
               <ul>
@@ -170,15 +170,15 @@ const navigate = useNavigate();
 
               <p>
                 Desenvolvimento físico,
-                disciplina, trabalho em equipe
-                e qualidade de vida.
+                disciplina e trabalho em equipe.
+               
               </p>
 
               <ul>
 
                 <li>
                   <FaCheck />
-                  Futsal, Vôlei, Ballet, karatê e Xadrez
+                  Futsal, Vôlei, Ballet, karatê.
                 </li>
 
                 <li>
