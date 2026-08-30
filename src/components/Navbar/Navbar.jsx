@@ -1,89 +1,50 @@
-import "./Navbar.css";
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 import Logo from "../../assets/Logo.png";
+import "./Navbar.css";
 
-import { useState } from "react";
-
-import { Link } from "react-router-dom";
-
-import {
-  Menu,
-  X
-} from "lucide-react";
+const links = [
+  { to: "/", label: "Home" },
+  { to: "/cursos", label: "Cursos" },
+  { to: "/sobre", label: "Sobre" },
+  { to: "/contato", label: "Contato" },
+];
 
 export default function Navbar() {
-
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-
     <header className="navbar">
-
       <div className="navbar-container">
-
-        {/* LOGO */}
-
-        <div className="logo-area">
-
-          <img
-            src={Logo}
-            alt="Logo UniMaster"
-          />
-
-        </div>
-
-        {/* MENU */}
+        <Link to="/" className="logo-area" onClick={() => setMenuOpen(false)}>
+          <img src={Logo} alt="Colégio UniMaster" />
+        </Link>
 
         <nav className={`menu ${menuOpen ? "active" : ""}`}>
-
-          <Link
-            to="/"
-            onClick={() => setMenuOpen(false)}
-          >
-            Início
-          </Link>
-
-          <Link
-            to="/cursos"
-            onClick={() => setMenuOpen(false)}
-          >
-            Cursos
-          </Link>
-
-          <Link
-            to="/sobre"
-            onClick={() => setMenuOpen(false)}
-          >
-            Sobre
-          </Link>
-
-          <Link
-            to="/contato"
-            onClick={() => setMenuOpen(false)}
-          >
-            Contato
-          </Link>
-
+          {links.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.to === "/"}
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+            </NavLink>
+          ))}
         </nav>
 
-        {/* BOTÃO MOBILE */}
-
-        <div
+        <button
+          type="button"
           className="menu-mobile"
-          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
         >
-
-          {
-            menuOpen
-              ? <X size={30} />
-              : <Menu size={30} />
-          }
-
-        </div>
-
+          {menuOpen ? <X size={30} /> : <Menu size={30} />}
+        </button>
       </div>
-
     </header>
-
   );
 }

@@ -17,7 +17,7 @@ export default function Benefits() {
 
           <div className="icon-box">
             <GraduationCap
-              size={32}
+              size={26}
               fill="currentColor"
               strokeWidth={1.5}
             />
@@ -37,7 +37,7 @@ export default function Benefits() {
 
           <div className="icon-box">
             <Users
-              size={32}
+              size={26}
               fill="currentColor"
               strokeWidth={1.5}
             />
@@ -57,7 +57,7 @@ export default function Benefits() {
 
           <div className="icon-box">
             <Star
-              size={32}
+              size={26}
               fill="currentColor"
               strokeWidth={1.5}
             />
@@ -77,7 +77,7 @@ export default function Benefits() {
 
           <div className="icon-box">
             <Heart
-              size={32}
+              size={26}
               fill="currentColor"
               strokeWidth={1.5}
             />

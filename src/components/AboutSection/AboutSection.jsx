@@ -150,7 +150,7 @@ export default function AboutSection() {
           <FaSchool />
 
           <div>
-            <h3>+20</h3>
+            <h3>+28</h3>
             <p>Anos de história</p>
           </div>
 

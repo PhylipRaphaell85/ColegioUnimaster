@@ -1,207 +1,93 @@
-import "./Courses.css";
 import { useNavigate } from "react-router-dom";
+import { FaUserFriends, FaCheck, FaBookOpen, FaFutbol } from "react-icons/fa";
+
 import Infantil from "../../assets/images/infantil.jpg";
 import Fundamental from "../../assets/images/fundamental.jpg";
 import Esportes from "../../assets/images/esportes.jpg";
+import "./Courses.css";
 
-import {
-  FaUserFriends,
-  FaCheck,
-  FaBookOpen,
-  FaFutbol
-} from "react-icons/fa";
-
+const courses = [
+  {
+    image: Infantil,
+    alt: "Educação Infantil",
+    icon: <FaUserFriends />,
+    title: "Educação Infantil",
+    range: "Maternal ao Infantil 5",
+    text: "Aprender brincando, explorando o mundo e desenvolvendo as primeiras habilidades.",
+    items: [
+      "Atividades lúdicas",
+      "Desenvolvimento socioemocional",
+      "Alfabetização e letramento",
+    ],
+  },
+  {
+    image: Fundamental,
+    alt: "Ensino Fundamental",
+    icon: <FaBookOpen />,
+    title: "Ensino Fundamental",
+    range: "1º ao 9º ano",
+    text: "Base sólida de conhecimentos para formar alunos preparados.",
+    items: [
+      "Componentes curriculares completos",
+      "Projetos interdisciplinares",
+      "Acompanhamento pedagógico",
+    ],
+  },
+  {
+    image: Esportes,
+    alt: "Esportes",
+    icon: <FaFutbol />,
+    title: "Esportes",
+    range: "Estrutura para a prática esportiva",
+    text: "Desenvolvimento físico, disciplina e trabalho em equipe.",
+    items: ["Futsal, vôlei, ballet e karatê", "Coordenação motora", "Espírito esportivo"],
+  },
+];
 
 export default function Courses() {
+  const navigate = useNavigate();
 
-const navigate = useNavigate();
   return (
-
     <section className="courses">
-
       <div className="courses-header">
-
-        {/* TEXTO */}
-
         <div className="courses-text">
-
-          <span>
-            NOSSOS CURSOS
-          </span>
-
+          <span>NOSSOS CURSOS</span>
           <h2>
-            Opções de ensino <br />
+            Opções de ensino
+            <br />
             para cada fase.
           </h2>
-
           <p>
-            Oferecemos uma formação completa,
-            com conteúdos atuais e atividades
+            Oferecemos uma formação completa, com conteúdos atuais e atividades
             que estimulam o aprendizado.
           </p>
-
-          <button onClick={() => navigate("/cursos")}>
-  VER TODOS OS CURSOS
-</button>
-
+          <button type="button" onClick={() => navigate("/cursos")}>
+            VER TODOS OS CURSOS
+          </button>
         </div>
-
-        {/* GRID */}
 
         <div className="courses-grid">
-
-          {/* EDUCAÇÃO INFANTIL */}
-
-          <div className="card">
-
-            <img
-              src={Infantil}
-              alt="Educação Infantil"
-            />
-
-            <div className="content">
-
-              <div className="icon">
-                <FaUserFriends />
+          {courses.map((course) => (
+            <article className="card" key={course.title}>
+              <img src={course.image} alt={course.alt} />
+              <div className="content">
+                <div className="icon">{course.icon}</div>
+                <h3>{course.title}</h3>
+                <p className="course-range">{course.range}</p>
+                <p>{course.text}</p>
+                <ul>
+                  {course.items.map((item) => (
+                    <li key={item}>
+                      <FaCheck />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-
-              <h3>
-                  Educação Infantil
-                <p>Maternal ao Infantil 5</p>
-              </h3>
-
-              <p>
-                Aprender brincando, explorando
-                o mundo e desenvolvendo
-                as primeiras habilidades.
-              </p>
-
-              <ul>
-
-                <li>
-                  <FaCheck />
-                  Atividades lúdicas
-                </li>
-
-                <li>
-                  <FaCheck />
-                  Desenvolvimento socioemocional
-                </li>
-
-                <li>
-                  <FaCheck />
-                  Alfabetização e letramento
-                </li>
-
-              </ul>
-
-            </div>
-
-          </div>
-
-          {/* ENSINO FUNDAMENTAL */}
-
-          <div className="card">
-
-            <img
-              src={Fundamental}
-              alt="Ensino Fundamental"
-            />
-
-            <div className="content">
-
-              <div className="icon">
-                <FaBookOpen />
-              </div>
-
-              <h3>
-                Ensino Fundamental
-                <p>1º ao 5º e Anos Finais 6º ao 9º ano</p>
-              </h3>
-
-              <p>
-                Base sólida de conhecimentos
-                para formar alunos
-               preparados.
-              </p>
-
-              <ul>
-
-                <li>
-                  <FaCheck />
-                  Componentes curriculares completos
-                </li>
-
-                <li>
-                  <FaCheck />
-                  Projetos interdisciplinares
-                </li>
-
-                <li>
-                  <FaCheck />
-                  Acompanhamento pedagógico
-                </li>
-
-              </ul>
-
-            </div>
-
-          </div>
-
-          {/* ESPORTES */}
-
-          <div className="card">
-
-            <img
-              src={Esportes}
-              alt="Esportes"
-            />
-
-            <div className="content">
-
-              <div className="icon">
-                <FaFutbol />
-              </div>
-
-              <h3>
-                Esportes
-                <p>Melhor estrutura para a prática de esportes.</p>
-              </h3>
-
-              <p>
-                Desenvolvimento físico,
-                disciplina e trabalho em equipe.
-               
-              </p>
-
-              <ul>
-
-                <li>
-                  <FaCheck />
-                  Futsal, Vôlei, Ballet, karatê.
-                </li>
-
-                <li>
-                  <FaCheck />
-                  Coordenação motora
-                </li>
-
-                <li>
-                  <FaCheck />
-                  Espírito esportivo
-                </li>
-
-              </ul>
-
-            </div>
-
-          </div>
-
+            </article>
+          ))}
         </div>
-
       </div>
-
     </section>
-
   );
 }

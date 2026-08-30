@@ -1,7 +1,3 @@
-import "./Footer.css";
-
-import Logo from "../../assets/Logo.png";
-
 import {
   FaInstagram,
   FaFacebookF,
@@ -9,36 +5,29 @@ import {
   FaYoutube,
   FaMapMarkerAlt,
   FaPhoneAlt,
-  FaEnvelope
+  FaEnvelope,
 } from "react-icons/fa";
 
-export default function Footer() {
+import { WHATSAPP_DISPLAY, whatsappUrl } from "../../constants/contact";
+import Logo from "../../assets/Logo.png";
+import "./Footer.css";
 
+export default function Footer() {
   return (
     <footer className="footer">
-
       <div className="footer-container">
-
-        {/* ESQUERDA */}
-
         <div className="footer-info">
-
-          <img
-            src={Logo}
-            alt="Logo UniMaster"
-            className="footer-logo"
-          />
+          <img src={Logo} alt="Colégio UniMaster" className="footer-logo" />
 
           <p>
-            Educação moderna, inovadora e preparada
-            para transformar o futuro dos alunos.
+            Educação moderna, inovadora e preparada para transformar o futuro
+            dos alunos.
           </p>
 
           <div className="footer-contact">
-
             <div>
               <FaPhoneAlt />
-              <span>(81) 98711-7084</span>
+              <span>{WHATSAPP_DISPLAY}</span>
             </div>
 
             <div>
@@ -50,57 +39,42 @@ export default function Footer() {
               <FaMapMarkerAlt />
               <span>Caruaru - PE</span>
             </div>
-
           </div>
-
         </div>
 
-        {/* MAPA */}
-
         <div className="footer-map">
-
           <iframe
+            title="Localização do Colégio UniMaster em Caruaru"
             src="https://www.google.com/maps?q=Caruaru&output=embed"
             allowFullScreen=""
             loading="lazy"
           ></iframe>
-
         </div>
-
-        {/* REDES */}
 
         <div className="footer-social">
-
-          <a href="/">
+          <a href="#instagram" aria-label="Instagram">
             <FaInstagram />
           </a>
-
-          <a href="/">
+          <a href="#facebook" aria-label="Facebook">
             <FaFacebookF />
           </a>
-
-          <a href="/">
+          <a
+            href={whatsappUrl()}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="WhatsApp"
+          >
             <FaWhatsapp />
           </a>
-
-          <a href="/">
+          <a href="#youtube" aria-label="YouTube">
             <FaYoutube />
           </a>
-
         </div>
-
       </div>
-
-      {/* BOTTOM */}
 
       <div className="footer-bottom">
-
-        <p>
-          © 2026 UniMaster - Todos os direitos reservados
-        </p>
-
+        <p>© 2026 UniMaster - Todos os direitos reservados</p>
       </div>
-
     </footer>
   );
 }

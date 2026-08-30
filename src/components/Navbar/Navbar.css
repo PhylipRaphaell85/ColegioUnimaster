@@ -1,40 +1,25 @@
-/* =========================
-   NAVBAR
-========================= */
-
 .navbar{
   width: 100%;
-  height: 90px;
-
+  height: 80px;
   background: white;
-
   display: flex;
   align-items: center;
-
   position: fixed;
   top: 0;
   left: 0;
-
   z-index: 9999;
-
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
-/* CONTAINER */
-
 .navbar-container{
   width: 100%;
-  max-width: 1300px;
-
+  max-width: 1200px;
   margin: auto;
-  padding: 0 30px;
-
+  padding: 0 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-/* LOGO */
 
 .logo-area{
   display: flex;
@@ -42,161 +27,59 @@
 }
 
 .logo-area img{
-  width: 170px;
-
+  width: 148px;
   object-fit: contain;
-
-  margin-top: -12px;
 }
-
-/* =========================
-   MENU DESKTOP
-========================= */
 
 .menu{
   display: flex;
   align-items: center;
-
-  gap: 45px;
+  gap: 36px;
 }
-
-/* LINKS */
 
 .menu a{
   position: relative;
-
   text-decoration: none;
-
   color: #001B66;
-
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
-
   transition: 0.3s;
 }
-
-/* LINHA */
 
 .menu a::after{
   content: "";
-
   width: 0%;
   height: 3px;
-
   background: #ff3131;
-
   position: absolute;
-
   left: 0;
   bottom: -8px;
-
   border-radius: 30px;
-
   transition: 0.3s;
 }
 
-.menu a:hover::after{
+.menu a:hover::after,
+.menu a.active::after{
   width: 100%;
 }
 
-.menu a:hover{
+.menu a:hover,
+.menu a.active{
   color: #0418F8;
 }
-
-/* =========================
-   BOTÃO MOBILE
-========================= */
 
 .menu-mobile{
   display: none;
-
   cursor: pointer;
-
   color: #0418F8;
-
+  background: none;
+  border: none;
+  padding: 4px;
   position: relative;
-
   z-index: 2000;
 }
 
-/* =========================
-   TABLET
-========================= */
-
 @media(max-width: 900px){
-
-  .navbar{
-    height: 80px;
-  }
-
-  .navbar-container{
-    padding: 0 20px;
-  }
-
-  .logo-area img{
-    width: 150px;
-  }
-
-  /* BOTÃO */
-
-  .menu-mobile{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .menu-mobile svg{
-    width: 32px;
-    height: 32px;
-  }
-
-  /* MENU MOBILE */
-
-  .menu{
-    width: 100%;
-    height: auto;
-
-    background: white;
-
-    position: fixed;
-
-    top: 80px;
-    left: 0;
-    
-    max-height: 0;
-    overflow: hidden;
-
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    gap: 20px;
-    padding: 0;
-
-    transition: max-height 0.4s ease, padding 0.4s ease;
-
-    z-index: 1500;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  }
-
-  .menu.active{
-    max-height: 70px;
-    padding: 15px 0;
-  }
-
-  .menu a{
-    font-size: 1rem;
-    white-space: nowrap;
-  }
-
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width: 600px){
-
   .navbar{
     height: 72px;
   }
@@ -206,59 +89,13 @@
   }
 
   .logo-area img{
-    width: 135px;
-
-    margin-top: -8px;
+    width: 132px;
   }
 
-  .menu{
-    top: 72px;
-  }
-
-  .menu.active{
-    max-height: 70px;
-  }
-
-  .menu a{
-    font-size: 0.95rem;
-  }
-
-  .menu-mobile svg{
-    width: 30px;
-    height: 30px;
-  }
-
-}
-
-/* =========================
-   MOBILE PEQUENO
-========================= */
-
-@media(max-width: 400px){
-
-  .navbar{
-    height: 65px;
-  }
-
-  .navbar-container{
-    padding: 0 14px;
-  }
-
-  .logo-area img{
-    width: 120px;
-  }
-
-  .menu{
-    top: 65px;
-    gap: 15px;
-  }
-
-  .menu.active{
-    max-height: 65px;
-  }
-
-  .menu a{
-    font-size: 0.9rem;
+  .menu-mobile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .menu-mobile svg{
@@ -266,4 +103,50 @@
     height: 28px;
   }
 
+  .menu{
+    width: 100%;
+    background: white;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    z-index: 1500;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+  }
+
+  .menu.active{
+    max-height: 280px;
+    padding: 8px 0 16px;
+  }
+
+  .menu a{
+    font-size: 0.95rem;
+    padding: 12px 24px;
+    text-align: center;
+  }
+
+  .menu a::after{
+    display: none;
+  }
+}
+
+@media(max-width: 480px){
+  .navbar{
+    height: 64px;
+  }
+
+  .logo-area img{
+    width: 118px;
+  }
+
+  .menu{
+    top: 64px;
+  }
 }
